@@ -146,7 +146,6 @@ function aplicarFiltros() {
     Array.from(products).forEach(producto => {
         const seller = producto.seller;
         const price = producto.price;
-        console.log(producto);
 
         const mostrarPorVendedor = vendedorSeleccionado === 'todos' || vendedorSeleccionado === seller;
         const mostrarPorPrecio = price <= precioMaximo;
