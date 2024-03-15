@@ -1,13 +1,56 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Juegos de Mesa</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.svg" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="#"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <h1>Bienvenido a nuestra tienda de juegos de mesa</h1>
+            <p>Explora nuestra selección de juegos y encuentra tus favoritos.</p>
+            <a href="#productos" class="btn">Ver productos</a>
+        </section>
+        <section id="filtros">
+            <h2>Filtrar por:</h2>
+            <label for="filtro-vendedor">Vendedor:</label>
+            <select id="filtro-vendedor">
+                <option value="todos">Todos</option>
+                <!-- Opciones de vendedores se agregarán dinámicamente desde JavaScript -->
+            </select>
+            <br>
+            <label for="filtro-precio">Precio máximo:</label>
+            <input type="number" id="filtro-precio" min="0">
+            <a id="buscar-precio" class="btn">Buscar</a>
+            <br>
+            <a id="limpiar-filtros" class="btn">Limpiar Filtros</a>
+        </section>
+        <section id="productos">
+            <h2>Nuestros productos</h2>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Juegos de Mesa</p>
+    </footer>
+</body>
+<script type="module" src="main.js"></script>
 </html>

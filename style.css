@@ -1,96 +1,187 @@
+/* Variables CSS */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --color-primario: #fff;
+  --color-secundario: #3ed88e;
+  --color-borde: #ccc;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* Reset de estilos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Estilos globales */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.logo img {
+  width: 100px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0; 
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+i{
+  color: var(--color-secundario);
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+h1, h2, h3, p {
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: var(--color-secundario);
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Otros estilos */
+.btn {
+  display: inline-block;
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+section > ul > li {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid var(--color-borde);
+  text-align: center;
+  border-radius: 9px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  color: inherit; /* o el color que desees */
+  text-decoration: none; /* o el estilo de subrayado que desees */
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+a:hover{
+  text-decoration: underline;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#filtros {
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 250px;
+  float: left;
+  margin-bottom: 20px;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+#filtros label { 
+  width: 100px; 
+  margin-right: 10px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+#filtros input[type="number"],
+#filtros select {
+  width: calc(100% - 110px); 
+  margin-right: 10px; 
+  margin-bottom: 10px; 
 }
 
-.card {
-  padding: 2em;
+#buscar-precio, #limpiar-filtros {
+  display: inline-block; 
+  margin-bottom: 10px; 
 }
 
-.read-the-docs {
-  color: #888;
+#productos {
+  margin-left: 280px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+li {
+  transition: transform 0.3s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+li:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 375px) {
+  section > ul > li {
+      width: calc(100% - 20px); 
   }
-  a:hover {
-    color: #747bff;
+}
+
+@media (min-width: 376px) and (max-width: 768px) {
+  section > ul > li {
+      width: calc(50% - 20px); 
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #filtros { 
+      padding: 20px;
+    width: 100%;
+  }
+  
+  #productos{
+    margin-left: 0px;
   }
 }
