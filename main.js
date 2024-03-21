@@ -142,6 +142,7 @@ vendedores.forEach(vendedor => {
 function aplicarFiltros() {
     const vendedorSeleccionado = filtroVendedor.value;
     const precioMaximo = parseFloat(filtroPrecio.value) || Infinity;
+    let algunProductoVisible = false;
 
     Array.from(products).forEach(producto => {
         const seller = producto.seller;
@@ -152,10 +153,18 @@ function aplicarFiltros() {
 
         if (mostrarPorVendedor && mostrarPorPrecio) {
           document.getElementById(producto.name).style.display = 'block';
+          algunProductoVisible = true;
       } else {
         document.getElementById(producto.name).style.display = 'none';
       }
     });
+
+    const mensajeProductosVacios = document.getElementById('vacio');
+    if (!algunProductoVisible) {
+        mensajeProductosVacios.style.display = 'block';
+    } else {
+        mensajeProductosVacios.style.display = 'none';
+    }
 }
 
 // Evento para aplicar filtro al cambiar vendedor seleccionado
